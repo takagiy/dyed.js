@@ -1,3 +1,3 @@
-# injectee.js
+# dyed.js
 
-A super light-weight and simple DI container for Node.js and others
+A super light-weight, simple and type-safe DI container for Node.js and others

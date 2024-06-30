@@ -1,7 +1,7 @@
 {
-  "name": "@injecteejs/injectee",
+  "name": "dyed",
   "version": "0.1.3",
-  "description": "A super light-weight and simple DI container for Node.js and others (Bun, Deno)",
+  "description": "A super light-weight, simple and type-safe DI container for Node.js and others (Bun, Deno)",
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/takagiy/injectee.js.git"
+    "url": "git+ssh://git@github.com/takagiy/dyed.js.git"
   },
   "keywords": [
     "dependency injection",
@@ -40,9 +40,9 @@
   "author": "Yuki Takagi <takagiy.4dev@gmail.com> (https://github.com/takagiy)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/takagiy/injectee.js/issues"
+    "url": "https://github.com/takagiy/dyed.js/issues"
   },
-  "homepage": "https://github.com/takagiy/injectee.js#readme",
+  "homepage": "https://github.com/takagiy/dyed.js#readme",
   "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74",
   "ava": {
     "files": ["tests/**/*.ts"],
