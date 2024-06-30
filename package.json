@@ -20,6 +20,7 @@
     "lint": "biome check; status=$?; echo 'Use `pnpm run lint!` to apply the fixes.'; exit $status",
     "lint!": "biome check --write",
     "test": "ava",
+    "version": "pnpm run lint!",
     "prepublishOnly": "pnpm run lint",
     "prepare": "pnpm run build"
   },
