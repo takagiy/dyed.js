@@ -1,5 +1,5 @@
 {
-  "name": "injectee",
+  "name": "@injecteejs/injectee",
   "version": "0.1.0",
   "description": "A super light-weight and simple DI container for Node.js and others (Bun, Deno)",
   "exports": {
