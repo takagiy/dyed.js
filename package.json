@@ -2,13 +2,22 @@
   "name": "injectee",
   "version": "0.1.0",
   "description": "A super light-weight and simple DI container for Node.js and others (Bun, Deno)",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "pnpm run build:types && pnpm run build:js",
     "build:types": "tsc --declaration --emitDeclarationOnly",
     "build:js": "swc src --out-dir dist --strip-leading-paths",
     "lint": "biome check; status=$?; echo 'Use `pnpm run lint!` to apply the fixes.'; exit $status",
-    "lint!": "biome check --write"
+    "lint!": "biome check --write",
+    "prepublishOnly": "pnpm run lint",
+    "prepare": "pnpm run build"
   },
   "repository": {
     "type": "git",
