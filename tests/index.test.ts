@@ -6,12 +6,12 @@ type Injected = {
 };
 
 test("call getter outside of beginContext", (t) => {
-  const di = DiContainer.create<Injected>();
+  const di = new DiContainer<Injected>();
   t.throws(() => di.foo);
 });
 
 test("inject value", (t) => {
-  const di = DiContainer.create<Injected>();
+  const di = new DiContainer<Injected>();
   di.beginContext({ foo: "foo" }, () => {
     t.is(di.foo, "foo");
   });

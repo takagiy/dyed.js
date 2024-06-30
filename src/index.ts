@@ -6,19 +6,19 @@ type KeyValueOf<T> = {
 
 type ValueOf<T> = T[Extract<keyof T, string | symbol>];
 
-export class DiContainer<T extends object> {
+class BaseDiContainer<T extends object> {
   private readonly context = new AsyncLocalStorage<T>();
 
   private constructor() {}
 
-  public static create<T extends object>(): DiContainer<T> & KeyValueOf<T> {
-    return new Proxy(new DiContainer<T>(), {
+  public static create<T extends object>(): DiContainer<T> {
+    return new Proxy(new BaseDiContainer<T>(), {
       get: (self, propertyName) => {
         return propertyName in self
           ? self[propertyName as keyof typeof self]
           : self.get(propertyName);
       },
-    }) as DiContainer<T> & KeyValueOf<T>;
+    }) as DiContainer<T>;
   }
 
   public beginContext<R, F extends () => R>(injected: T, callback: F): R {
@@ -37,3 +37,9 @@ export class DiContainer<T extends object> {
     ];
   }
 }
+
+type DiContainerConstructor = { new <T extends object>(): DiContainer<T> };
+
+export type DiContainer<T extends object> = BaseDiContainer<T> & KeyValueOf<T>;
+export const DiContainer: DiContainerConstructor =
+  BaseDiContainer.create as unknown as DiContainerConstructor;
