@@ -1,0 +1,42 @@
+{
+  "name": "injectee",
+  "version": "0.1.0",
+  "description": "A super light-weight and simple DI container for Node.js and others (Bun, Deno)",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "pnpm run build:types && pnpm run build:js",
+    "build:types": "tsc --declaration --emitDeclarationOnly",
+    "build:js": "swc src --out-dir dist --strip-leading-paths",
+    "lint": "biome check; status=$?; echo 'Use `pnpm run lint!` to apply the fixes.'; exit $status",
+    "lint!": "biome check --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/takagiy/injectee.js.git"
+  },
+  "keywords": [
+    "dependency injection",
+    "di",
+    "dependency",
+    "injection",
+    "container",
+    "ioc",
+    "typescript"
+  ],
+  "author": "Yuki Takagi <takagiy.4dev@gmail.com> (https://github.com/takagiy)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/takagiy/injectee.js/issues"
+  },
+  "homepage": "https://github.com/takagiy/injectee.js#readme",
+  "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74",
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@swc/cli": "^0.4.0",
+    "@swc/core": "^1.6.6",
+    "@tsconfig/node-lts": "^20.1.3",
+    "@tsconfig/strictest": "^2.0.5",
+    "@types/node": "^20.14.9",
+    "typescript": "^5.5.2"
+  }
+}
