@@ -41,5 +41,8 @@ class BaseDiContainer<T extends object> {
 type DiContainerConstructor = { new <T extends object>(): DiContainer<T> };
 
 export type DiContainer<T extends object> = BaseDiContainer<T> & KeyValueOf<T>;
-export const DiContainer: DiContainerConstructor =
-  BaseDiContainer.create as unknown as DiContainerConstructor;
+export const DiContainer: DiContainerConstructor = function DiContainer<
+  T extends object,
+>(): DiContainer<T> {
+  return BaseDiContainer.create<T>();
+} as unknown as DiContainerConstructor;
