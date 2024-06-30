@@ -3,12 +3,12 @@
     "@tsconfig/node-lts/tsconfig.json",
     "@tsconfig/strictest/tsconfig.json"
   ],
-  "include": ["src/**/*.ts"],
+  "include": ["./src/**/*.ts"],
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
     "declaration": true
   }
