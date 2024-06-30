@@ -1,6 +1,6 @@
 {
   "name": "@injecteejs/injectee",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A super light-weight and simple DI container for Node.js and others (Bun, Deno)",
   "exports": {
     ".": {
@@ -44,9 +44,16 @@
   "homepage": "https://github.com/takagiy/injectee.js#readme",
   "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74",
   "ava": {
-    "files": ["tests/**/*.ts"],
-    "extensions": ["ts"],
-    "nodeArguments": ["-r", "@swc-node/register"],
+    "files": [
+      "tests/**/*.ts"
+    ],
+    "extensions": [
+      "ts"
+    ],
+    "nodeArguments": [
+      "-r",
+      "@swc-node/register"
+    ],
     "environmentVariables": {
       "SWCRC": "true"
     }
