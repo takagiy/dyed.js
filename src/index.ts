@@ -1,7 +1,7 @@
 import { AsyncLocalStorage } from "node:async_hooks";
 
 type KeyValueOf<T> = {
-  [K in Extract<keyof T, string | symbol>]: T[K];
+  readonly [K in Extract<keyof T, string | symbol>]: T[K];
 };
 
 type ValueOf<T> = T[Extract<keyof T, string | symbol>];
