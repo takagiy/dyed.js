@@ -1,6 +1,6 @@
 {
   "name": "dyed",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "A super light-weight, simple and type-safe DI container for Node.js and others (Bun, Deno)",
   "exports": {
     ".": {
